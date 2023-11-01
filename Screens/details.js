@@ -1,11 +1,13 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import styles from '../style';
+import { useSelector } from 'react-redux';
 const IMG_URL = 'https://image.tmdb.org/t/p/w300';
 
 function DetailsScreen({route}) {
   const {item} = route.params;
-
+  const movie = useSelector(state => state)
+  console.log('movie : ',movie.movie.movie.value);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <View style={styles.centeredView}>
